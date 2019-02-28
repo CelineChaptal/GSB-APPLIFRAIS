@@ -1,5 +1,5 @@
 <?php
-	$this->load->helper('url');
+$this->load->helper('url');
 ?>
 <div id="contenu">
 	<h2>Liste de mes fiches de frais</h2>
@@ -51,8 +51,8 @@
 					$signeLink = '';
 
 					if ($uneFiche['idEtat'] == 'CL') {
-						$modLink = anchor('c_visiteur/validFiche/'.$uneFiche['mois'], 'valider',  'title="Modifier la fiche"');
-						$signeLink = anchor('c_visiteur/refusFiche/'.$uneFiche['mois'], 'refuser',  'title="Valider la fiche"  onclick="return confirm(\'Voulez-vous vraiment valider cette fiche ?\');"');
+						$modLink = anchor('c_visiteur/validFiche/'.$uneFiche['idVisiteur'].'/'.$uneFiche['mois'], 'valider',  'title="Valider la fiche" onclick="return confirm(\'Voulez-vous vraiment valider cette fiche ?\');"');
+						$signeLink = anchor('c_visiteur/refusFiche/'.$uneFiche['idVisiteur'].'/'.$uneFiche['mois'], 'refuser',  'title="Refuser la fiche"  onclick="return confirm(\'Voulez-vous vraiment refuser cette fiche ?\');"');
 					}
 					
 					echo 
